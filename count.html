@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count with Prime Check</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+    body {
+      font-family: 'Sofia', cursive;
+      text-align: center;
+      margin-top: 50px;
+      background: linear-gradient(to right, rgb(226, 139, 76), lightgreen);
+    }
+    label {
+      font-size: 50px;
+      margin: 0 15px;
+      display: block;
+    }
+    p {
+      font-size: 25px;
+      color: darkblue;
+      margin-top: 10px;
+    }
+    button {
+      text-align: center;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      color: black;
+      background-color: violet;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: plum;
+    }
+    .border{
+      border: 3px solid black;
+      width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: linen
+    }
+  </style>
+</head>
+<body>
+    <div class="border">
+      <u><h1>Count with Prime Check</h1></u>
+  <label id="countLabel">0</label>
+
+  <div class="contain">
+    <button id="decrease">Decrease</button>
+    <button id="reset">Reset</button>
+    <button id="increase">Increase</button>
+  </div>
+   <p id="oddEvenStatus">0 is a even number</p>
+    <p id="primeStatus">0 is not a prime number</p>
+    </div>
+  <script>
+    let count = 0;
+    const label = document.getElementById('countLabel');
+    const primeStatus = document.getElementById('primeStatus');
+    const decreaseBtn = document.getElementById('decrease');
+    const resetBtn = document.getElementById('reset');
+    const increaseBtn = document.getElementById('increase');
+    const oddEvenstatus = document.getElementById('oddEvenStatus');
+    
+
+    function isPrime(num) {
+      if (num <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+    
+function updateDisplay() {
+    label.textContent = count;
+    if (count % 2 === 0) {
+        oddEvenstatus.textContent = `${count} is an even number`;
+    } else {
+        oddEvenstatus.textContent = `${count} is an odd number`;
+    }
+
+      if (isPrime(count)) {
+        primeStatus.textContent = `${count} is a prime number`;
+      } else {
+        primeStatus.textContent = `${count} is not a prime number`;
+      }
+    }
+
+    decreaseBtn.onclick = function() {
+      count--;
+      updateDisplay();
+    };
+
+    resetBtn.onclick = function() {
+      count = 0;
+      updateDisplay();
+    };
+
+    increaseBtn.onclick = function() {
+      count++;
+      updateDisplay();
+    };
+
+  </script>
+</body>
+</html>

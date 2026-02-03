@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Headings</title>
+    <style>
+        p {
+  animation: fadeIn 2s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+ .close{
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(40, end), blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+        .animated-heading {
+            text-align: center;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px;
+            animation: colorPulse 4s ease-in-out infinite;
+            text-shadow: 0 0 10px currentColor;
+            transition: transform 3s ease;
+        }
+
+        @keyframes colorPulse {
+            0%   { color: royalblue; transform: scale(1); }
+            25%  { color: crimson; transform: scale(1.05); }
+            50%  { color: darkorchid; transform: scale(1.1); }
+            75%  { color: teal; transform: scale(1.05); }
+            100% { color: royalblue; transform: scale(1); }
+        }
+
+        .contain {
+            width: 80%;
+            margin: auto;
+            padding: 10px;
+            background-color: rgb(155, 155, 229);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Optional: Pause animation on hover */
+        .animated-heading:hover {
+            animation-play-state:paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="close">
+    <div class="contain">
+        <h2 class="animated-heading">Heading Tags</h2>
+        <h1>I am a big heading and bold.</h1>
+        <h2>Headings are Bold.</h2>
+        <h6>I am a small heading.</h6>
+        <hr>
+        <p>The "Horizontal Rule" tag is used to create a horizontal line.</p>
+        <hr>
+        <h2 class="animated-heading">Paragraph Tags</h2>
+        <p>The "Paragraph tag" is normal Paragraph.</p>
+        <pre>The "Pre tag" usage
+            the text are displayed 
+            in what we type 
+            that will be displayed....
+        </pre>
+        <p>The "Break Line Tag" is used to create the next line <br>To break the line.</p>
+        <h2 class="animated-heading">Style Tag</h2>
+        <p style="font-size: 20px; font-family: Georgia, 'Times New Roman', Times, serif;">
+            The "Style tag" is used to add css html<br>document.
+        </p>
+    </div>
+    </div>
+</body>
+</html>

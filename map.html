@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Map() Function</h2>
+    <h3 id="h3"></h3>
+    <h4 id="h4"></h4>
+    <script>
+        const dates=["2025-12-31","2026-1-20","2027-11-4"];
+        const d1=dates.map(callDate);
+        document.getElementById("h3").innerHTML=d1;
+
+        function callDate(num){
+            const part=num.split("-");
+            return `${part[2]}/${part[1]}/${part[0]}`
+        }
+        const names=["Dog","Cat","Bear"];
+        const n2=names.map(upper);
+        document.getElementById("h4").innerHTML=n2;
+
+        function upper(n1){
+            return n1.toUpperCase();
+        }
+    </script>
+</body>
+</html>

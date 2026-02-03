@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RJ Supermarket - Premium</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fa;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      backdrop-filter: blur(12px);
+      padding: 15px;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 24px;
+      color: #0077b6 !important;
+    }
+
+    .nav-link {
+      font-size: 16px;
+      color: #000 !important;
+      margin: 0 12px;
+    }
+
+    .nav-link:hover {
+      color: #0077b6 !important;
+    }
+
+    /* HERO SECTION */
+    #hero {
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1585325701954-6c61b021f3a9') center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    #hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 700px;
+    }
+
+    .hero-content h1 {
+      font-size: 55px;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    .btn-main {
+      background: #0077b6;
+      padding: 12px 28px;
+      border-radius: 50px;
+      color: white;
+      font-size: 18px;
+      border: none;
+    }
+
+    .btn-main:hover {
+      background: #005a8e;
+    }
+
+    /* CATEGORIES */
+    .category-box {
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: .3s;
+    }
+
+    .category-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    }
+
+    .category-box img {
+      width: 90px;
+      margin-bottom: 15px;
+    }
+
+    /* OFFER BANNER */
+    .offer-banner {
+      background: linear-gradient(135deg, #0077b6, #0096c7);
+      color: white;
+      padding: 50px;
+      border-radius: 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .offer-banner h2 {
+      font-size: 35px;
+      font-weight: 700;
+    }
+
+    /* PRODUCTS */
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: .3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #e9ecef;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">RJ Supermarket</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Fresh. Clean. Affordable.</h1>
+      <p>Your trusted supermarket for groceries, home essentials & daily needs.</p>
+      <button class="btn-main mt-3">Explore Products</button>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="container my-5">
+    <h2 class="text-center mb-4 fw-bold">Our Categories</h2>
+
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="category-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/135/135763.png">
+          <h5>Vegetables</h5>
+          <p>Fresh & organic everyday</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="category-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/2909/2909833.png">
+          <h5>Fruits</h5>
+          <p>Hand-picked best quality</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="category-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+          <h5>Snacks</h5>
+          <p>Top brands & tasty items</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="category-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+          <h5>Household</h5>
+          <p>Everything for your home</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER BANNER -->
+  <section class="container offer-banner">
+    <h2>⚡ Mega Offer: Up to 50% Off!</h2>
+    <p>Special discounts on fruits, snacks & essentials. Limited time only!</p>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="container my-5">
+    <h2 class="text-center mb-4 fw-bold">Featured Products</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+          <div class="p-3">
+            <h5>Fresh Apples</h5>
+            <p>₹120 / kg</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="product-card">
+          <img src="https://cdn.pixabay.com/photo/2022/08/15/07/29/bananas-7387249_1280.jpg">
+          <div class="p-3">
+            <h5>Organic Bananas</h5>
+            <p>₹60 / dozen</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-card">
+          <img src="https://kaboompics.com//cache_1/7/8/9/3/7/789374427ed906adfcd5f152843dd8dc1fa615d5.jpeg">
+          <div class="p-3">
+            <h5>Stationary</h5>
+            <p>₹30</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT -->
+  <section id="contact" class="container my-5" style="max-width:700px;">
+    <h2 class="text-center fw-bold mb-4">Contact Us</h2>
+
+    <div class="contact-box">
+      <input class="form-control mb-3" type="text" placeholder="Your Name">
+      <input class="form-control mb-3" type="email" placeholder="Your Email">
+      <textarea class="form-control mb-3" rows="5" placeholder="Your Message"></textarea>
+      <button class="btn btn-primary w-100 py-2">Send Message</button>
+    </div>
+  </section>
+
+  <footer>
+    RJ Supermarket • LF Main Road, Cumbum, Theni • 📞 +91 98765 43210
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://t4.ftcdn.net/jpg/04/29/82/93/360_F_429829305_hnlwKXMrdbiggNhIIQiuu3YxkAuNqJbN.jpg">
+    <title>Welcome</title>
+    <style>
+        body{
+            background-color:rgb(202, 244, 202);
+        }
+        h3{
+
+            text-align: center;
+            color: rgb(48, 48, 200);
+            font-size: 25px;
+            text-shadow: 2px 1px gold;
+        }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(92, 91, 91, 0.1);
+      width: 300px;
+      margin: 20px auto;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {       
+        width: 100%;
+      padding: 12px 20px;
+      background-color: green;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    a{
+        color: green;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    p{
+        text-align: center;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h3>Welcome To Our Supermarket</h3>
+    <form onsubmit="return checkThis()">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" id="em" required><br><br>
+        <input type="password" placeholder="Password" id="pass" title="Password must be at least 8 characters and Special characters" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[@!#$%^&*]).{8,}$" required><br><br>
+        <button type="submit">Login</button><br><br>
+        <p>Don't have an account ? <a href="signup.html">Sign Up</a></p>
+    </form>
+    <script>
+        function checkThis(){
+            let email=document.getElementById("em").value;
+            let pass=document.getElementById("pass").value;
+
+            let get1=JSON.parse(localStorage.getItem("userData"));
+            if(get1&&email==get1.email && pass==get1.pass){
+                alert("Login Successfully")
+                window.location.href="static.html"
+            }
+            else{
+                alert("Invaild Inputs")
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

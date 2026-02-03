@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    A : <input id="A" placeholder="enter the number"><br><br>
+    B : <input id="B" placeholder="enter the number"><br><br>
+    <button onclick="add()">Click</button><br><br>
+    Result: <span id="plus"></span>
+    <script>
+        function add(){
+            var a=Number(document.getElementById('A').value);
+            var b=Number(document.getElementById('B').value);
+            var result=a+b;
+            document.getElementById('plus').textContent=result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Media</title>
+    </head>
+    <style>
+        body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgb(249, 218, 249);
+      transition: background-color 2s ease-in-out;
+      animation-name: normalBg;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes normalBg {
+      0% { background-color: rgb(238, 136, 238); }
+      25% { background-color: rgb(115, 234, 200); }
+      50% { background-color: rgb(218, 234, 249); }
+      75% { background-color: rgb(211, 245, 156); }
+      100% { background-color: rgb(249, 218, 249); }
+    }
+    h2 {
+      color: rgb(199, 44, 199);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #d02aed;
+    }
+    video, audio {
+      display: block;
+      margin: 10px auto;
+      border: 2px solid #f18888;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        padding: 10px;
+        transition: transform 0.3s ease;
+    }
+    video:hover, audio:hover {
+      transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+    <body>
+        <h2 style="text-align: center;">Video Tag</h2>
+        <video width="320" height="240" controls title="video">
+            <source src="2098988-uhd_3840_2160_30fps.mp4" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+        <br><br>
+        <h2 style="text-align: center;">Audio Tag</h2>
+        <audio controls title="audio">
+            <source src="audio-club-edyn-343275.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+         
+    </body>
+</html>

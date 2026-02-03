@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GST Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 24px; background:#f6f7fb; color:#222; }
+        .card { background:#fff; max-width:520px; margin:0 auto; padding:20px; border-radius:8px; box-shadow:0 6px 18px rgba(20,20,50,0.08);}
+        label { display:block; margin-top:12px; font-size:14px; }
+        input[type="number"], select { width:100%; padding:10px; margin-top:6px; box-sizing:border-box; border-radius:6px; border:1px solid #d7dce8; }
+        .row { display:flex; gap:8px; margin-top:12px; }
+        .row > * { flex:1; }
+        .result { margin-top:16px; padding:12px; border-radius:6px; background:#f1f5ff; font-weight:600; }
+        .muted { font-weight:400; color:#555; font-size:13px; }
+        .btn { margin-top:14px; padding:10px 12px; border:0; border-radius:6px; background:#2563eb; color:#fff; cursor:pointer; }
+        .btn:active { transform:translateY(1px); }
+        .small { font-size:13px; color:#333; margin-top:8px; }
+    </style>
+</head>
+<body>
+    <div class="card" role="application" aria-label="GST calculator">
+        <h2 style="margin:0 0 8px 0">GST Calculator</h2>
+        <div class="muted">Enter an amount and GST rate. Choose Exclusive (add GST) or Inclusive (amount includes GST).</div>
+
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" step="0.01" min="0" placeholder="0.00" value="100">
+
+        <div class="row">
+            <div>
+                <label for="rate">GST rate (%)</label>
+                <input id="rate" type="number" step="0.01" min="0" placeholder="e.g. 18" value="18">
+            </div>
+            <div>
+                <label for="precision">Decimals</label>
+                <select id="precision">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
+
+        <label style="margin-top:12px">Mode</label>
+        <div class="row" style="gap:6px;">
+            <button id="exclusive" class="btn" type="button" style="background:#10b981">Exclusive</button>
+            <button id="inclusive" class="btn" type="button" style="background:#f59e0b">Inclusive</button>
+        </div>
+
+        <div class="result" aria-live="polite">
+            <div>Taxable/Base amount: <span id="base">0.00</span></div>
+            <div style="margin-top:6px">GST amount: <span id="gst">0.00</span></div>
+            <div style="margin-top:6px">Total amount: <span id="total">0.00</span></div>
+        </div>
+
+        <div class="small">Buttons: Exclusive = amount is before GST. Inclusive = amount already includes GST.</div>
+    </div>
+
+    <script>
+        const amountEl = document.getElementById('amount');
+        const rateEl = document.getElementById('rate');
+        const precisionEl = document.getElementById('precision');
+        const baseEl = document.getElementById('base');
+        const gstEl = document.getElementById('gst');
+        const totalEl = document.getElementById('total');
+        const exclusiveBtn = document.getElementById('exclusive');
+        const inclusiveBtn = document.getElementById('inclusive');
+
+        let mode = 'exclusive'; // default
+
+        function fmt(v, p) {
+            return Number(v).toLocaleString(undefined, { minimumFractionDigits: p, maximumFractionDigits: p });
+        }
+
+        function calculate() {
+            const p = parseInt(precisionEl.value, 10);
+            const amt = parseFloat(amountEl.value) || 0;
+            const rate = parseFloat(rateEl.value) || 0;
+            if (mode === 'exclusive') {
+                const gst = amt * (rate / 100);
+                const total = amt + gst;
+                baseEl.textContent = fmt(amt, p);
+                gstEl.textContent = fmt(gst, p);
+                totalEl.textContent = fmt(total, p);
+            } else { // inclusive
+                const base = amt / (1 + rate / 100);
+                const gst = amt - base;
+                baseEl.textContent = fmt(base, p);
+                gstEl.textContent = fmt(gst, p);
+                totalEl.textContent = fmt(amt, p);
+            }
+        }
+
+        function setMode(m) {
+            mode = m;
+            // visual feedback
+            if (m === 'exclusive') {
+                exclusiveBtn.style.opacity = '1';
+                inclusiveBtn.style.opacity = '0.6';
+            } else {
+                inclusiveBtn.style.opacity = '1';
+                exclusiveBtn.style.opacity = '0.6';
+            }
+            calculate();
+        }
+
+        // events
+        amountEl.addEventListener('input', calculate);
+        rateEl.addEventListener('input', calculate);
+        precisionEl.addEventListener('change', calculate);
+        exclusiveBtn.addEventListener('click', () => setMode('exclusive'));
+        inclusiveBtn.addEventListener('click', () => setMode('inclusive'));
+
+        // initialize
+        setMode(mode);
+        calculate();
+    </script>
+</body>
+</html>

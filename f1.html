@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color:rgb(202, 238, 244);
+        }
+        h3{
+
+            text-align: center;
+            color: rgb(48, 48, 200);
+            font-size: 25px;
+            text-shadow: 2px 1px gold;
+        }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(92, 91, 91, 0.1);
+      width: 300px;
+      margin: 20px auto;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid red;
+      border-radius: 4px;
+    }
+    h2{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h2>Form Using JS</h2>
+    <form>
+            <input type="text" placeholder="Enter your name" id="name" required><br><br>
+            <input type="password" placeholder="Enter your password" id="pass" required><br><br>
+            <input type="button" value="Print" onclick="p1()">
+    </form>
+    <script>
+        function p1(){
+            let name=document.getElementById("name").value;
+            let pass=document.getElementById("pass").value;
+            let new1=window.open("_self");
+
+            new1.document.write("Username : "+name+"<br><br>");
+            new1.document.write("Password : "+pass);
+
+        }
+    </script>
+</body>
+</html>

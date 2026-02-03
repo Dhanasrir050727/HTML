@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+  <!-- Style Start -->
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background:linear-gradient(to right,rgb(247, 111, 247),rgb(218, 183, 252));
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgb(251, 175, 175);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgb(120, 118, 118);
+    }
+    textarea {
+      width: 350px;
+      height: 80px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      background: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .note {
+      background: #e6f7ff;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    ::placeholder{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    textarea{
+        width: 350px;
+    }
+    #link{
+      padding: 10px 15px;
+      background: rgb(153, 153, 227);
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+    }
+    #link:hover{
+      background-color: blue;
+    }
+  </style>
+  <!-- Style End -->
+</head>
+<body>
+  <h1 class="w3-animate-left">My Notes 🖉🖉</h1>
+  <div class="container w3-animate-bottom">
+    <textarea id="noteInput" placeholder="Write your note..."></textarea><br>
+    <button onclick="addNote()">Add Note<span style="font-size: 20px;">&#128203;</span></button>
+    <div id="notesList"></div>
+    <br>
+    <center><a href="note.html" id="link">Back to Home 🏠</a></center>
+  </div>
+<!-- javascript file -->
+  <script src="note.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age App</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        padding-top: 100px;
+    }
+    .container{
+        background:whitesmoke;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        padding: 10px 10px;
+        box-shadow: 0 0 20px rgb(128, 125, 125);
+        max-width: 500px;
+    }
+    input{
+        width: 200px;
+        height: 25px;
+    }
+    button{
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 20px;
+        color: rgb(139, 21, 242);
+        text-decoration: none;
+        border-radius: 8px;
+        background:hotpink;
+        cursor: pointer;
+    }
+    h2{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Age Calculation</h2>
+        <label id="text">Enter Your DOB</label><br><br>
+        <input type="date" id="dob"><br><br>
+        <button id="btn" onclick="calAge()">Click</button><br><br>
+        <p id="final">Your Age is 20 years old</p>
+    </div>
+    <script src="age.js"></script>
+</body>
+</html>

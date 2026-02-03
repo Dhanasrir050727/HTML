@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Bigger</title>
+</head>
+<body>
+    <h2>Find the Biggest Number</h2>
+    <form>
+        First Number: <input type="number" id="firstNumber"><br><br>
+        Second Number: <input type="number" id="secondNumber"><br><br>
+        Third Number: <input type="number" id="thirdNumber"><br><br>
+        <input type="button" value="Check" onclick="FindBig()"><br><br>
+    </form>
+    <h3 id="txt"></h3>
+    <script>
+        function FindBig() {
+            let num1 = Number(document.getElementById("firstNumber").value);
+            let num2 = Number(document.getElementById("secondNumber").value);
+            let num3 = Number(document.getElementById("thirdNumber").value);
+
+            if (num1 > num2) {
+                if (num1 > num3) {
+                    document.getElementById("txt").innerHTML = "First number is biggest";
+                }  else if (num3>num1){
+                    document.getElementById("txt").innerHTML = "Third number is biggest";
+                }
+                else {
+                    document.getElementById("txt").innerHTML = "First & Third numbers are equal and biggest";
+                }
+            } else if (num2 > num3) {
+                if (num2>num1) {
+                    document.getElementById("txt").innerHTML = "Second number is biggest";
+                } else if(num1>num2){
+                    document.getElementById("txt").innerHTML = "First number is biggest";
+                }
+                else{
+                    document.getElementById("txt").innerHTML="First & Second numbers are equal and biggest";
+                }
+            }else if(num3>num1){
+                    if(num3>num2){
+                        document.getElementById("txt").innerHTML = "Third number is biggest";
+                    }
+                    else{
+                        document.getElementById("txt").innerHTML = "Second & Third numbers are equal and biggest";
+                    }
+                }else{
+                    document.getElementById("txt").innerHTML="All three numbers are equal";
+                }
+        }
+    </script>
+</body>
+</html>

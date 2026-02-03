@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(to right, lightgreen, lightpink);
+            display: block;
+            text-align: center;
+            padding-top: 100px;
+        }
+        fieldset{
+            width: 50%;
+            margin: auto;
+            border: none;
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        span{
+            font-weight: bold;
+        }
+        h4{
+            margin-bottom: -10px;
+        }
+        </style>
+</head>
+<body>
+    <h3>Welcome To Our Page</h3>
+    <form>
+        <fieldset>
+            <h4>Login Details</h4><br><br>
+        Your email is: <span id="display"></span><br><br>
+        Your password is: <span id="display1"></span>
+        </fieldset>
+    </form>
+
+    <script>
+        const n1=localStorage.getItem("name");
+        const p1=localStorage.getItem("pass");
+        document.getElementById("display").textContent=n1;
+        document.getElementById("display1").textContent=p1;
+    </script>
+</body>
+</html>

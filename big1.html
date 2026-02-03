@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="/action_page.php">
+  <label >First number:</label><br>
+  <input type="number" id="firstNumberTxt"><br>
+  <label>Second number:</label><br>
+  <input type="number" id="secondNumberTxt"><br><br>
+    <label>Third number:</label><br>
+  <input type="number" id="thirdNumberTxt"><br><br>
+  <input type="button" onclick="findBig()" value="Check" >
+</form> 
+<h2 id="txt"><h2>
+<script>
+
+function findBig(){
+
+let num1=Number(document.getElementById('firstNumberTxt').value);
+let num2=Number(document.getElementById('secondNumberTxt').value);
+let num3=Number(document.getElementById('thirdNumberTxt').value);
+
+  if(num1>num2){
+	 if(num1>num3){
+			document.getElementById("txt").innerHTML="FirstNumber is Bigger";
+  	}
+	else{
+		document.getElementById("txt").innerHTML="ThirdNumber is Bigger";
+	}
+}
+  else if(num2>num3){
+		document.getElementById("txt").innerHTML="SecondNumber is Bigger";
+	}
+ else{
+		document.getElementById("txt").innerHTML="ThirdNumber is Bigger";
+  }
+
+}
+</script>
+
+</body>
+</html>
+

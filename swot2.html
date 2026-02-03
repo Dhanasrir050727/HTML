@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SWOT Entry</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sofia&display=swap');
+    body {
+      font-family: 'PT Serif', serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+    }
+    .border{
+        border:2px solid white;
+        width: 400px;
+        border-radius: 10px;
+        background-color:ghostwhite;
+    }
+    #title{
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 25px;
+        color: darkmagenta;
+        text-shadow: 3px 3px 5px plum;
+    }
+    .entry {
+      margin-top: 20px;
+    }
+    .entry div {
+      margin: 5px;
+      padding: 10px;
+      background-color: ghostwhite;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+    <div class="border">
+        <h2 id="title"></h2>
+        <input type="text" id="username" placeholder="Your Name" />
+        <input type="text" id="entryText" placeholder="Type your entry..." />
+        <button onclick="addEntry()" title="save the text">Add</button><br><br>
+        <div class="entry" id="entryList"></div>
+    </div>
+
+  <script>
+    const type = localStorage.getItem("selectedType");
+    document.getElementById("title").textContent = "Enter your " + type;
+
+    let entries = JSON.parse(localStorage.getItem("entries")) || {};
+
+    function addEntry() {
+      const name = document.getElementById("username").value.trim();
+      const text = document.getElementById("entryText").value.trim();
+      if (!name || !text) return;
+
+      if (!entries[name]) entries[name] = {};
+      if (!entries[name][type]) entries[name][type] = [];
+      entries[name][type].push(text);
+
+      localStorage.setItem("entries", JSON.stringify(entries));
+      renderEntries(name);
+    }
+
+    function renderEntries(name) {
+      const list = document.getElementById("entryList");
+      list.innerHTML = "";
+      const items = entries[name]?.[type] || [];
+      items.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.innerHTML = `<span>${item}</span> <button onclick="deleteEntry('${name}', ${index})">X</button>`;
+        list.appendChild(div);
+      });
+    }
+
+    function deleteEntry(name, index) {
+      entries[name][type].splice(index, 1);
+      localStorage.setItem("entries", JSON.stringify(entries));
+      renderEntries(name);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    <input type="number" id="num1" placeholder="Enter the number"><br><br>
+    <input type="button" onclick="fact1()" value="Check"><br><br>
+    <p id="result"></p>
+    <script>
+        function fact1(){
+            let num=Number(document.getElementById("num1").value);
+            let result=document.getElementById("result");
+            var fact=1;
+            var i=1;
+            while(i<=num){
+                fact=fact*i;
+                i++;
+            }
+            result.innerHTML="Factorial Value is : "+fact;
+        }
+    </script>
+</body>
+</html>

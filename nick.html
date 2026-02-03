@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Nickname Generator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #555657;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      width: 80%;
+      text-shadow: 0 0 10px rgb(203, 203, 209);
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Nickname Generator 🌍</h2>
+    <input type="text" id="name" placeholder="Enter your name">
+    <select id="style">
+      <option value="funny">Funny</option>
+      <option value="cool">Cool</option>
+      <option value="tamil">Tamil Style</option>
+    </select>
+    <button onclick="generate()">Generate</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function generate() {
+      const name = document.getElementById("name").value.trim();
+      const style = document.getElementById("style").value;
+      let nickname = "";
+
+      if (!name) {
+        nickname = "Please enter your name!";
+      } else if (style === "funny") {
+        nickname = name + " is the Boss 👨‍💼";
+      } else if (style === "cool") {
+        nickname ="Rockstar "+name+" 🚀";
+      } else if (style === "tamil") {
+        nickname = "Thala " + name + " 🔥";
+      }
+
+      document.getElementById("result").textContent = nickname;
+    }
+  </script>
+</body>
+</html>

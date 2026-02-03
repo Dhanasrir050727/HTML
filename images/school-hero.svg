@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#FFF5F8"/>
+  <g transform="translate(120,80)">
+    <rect x="0" y="0" width="960" height="640" rx="24" fill="#FFEEF2" stroke="#FFD1DC" stroke-width="6"/>
+    <g transform="translate(60,80)">
+      <circle cx="140" cy="140" r="72" fill="#FF6B9D" />
+      <circle cx="360" cy="120" r="64" fill="#FFA502" />
+      <circle cx="580" cy="150" r="68" fill="#06D6A0" />
+      <text x="360" y="380" font-family="Trebuchet MS, Arial" font-size="34" fill="#C44569" text-anchor="middle">Selvagam — Happy Students</text>
+    </g>
+  </g>
+</svg>

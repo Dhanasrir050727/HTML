@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="xerox.jpg">
+  <title>Xerox Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f564e9, #d79be7,#f564e9);
+      border-radius: 20px;
+      animation: fadeIn 2s ease-in-out;
+      display: inline;
+    }
+    header {
+      background:linear-gradient(to right, #656465, #2d2c2d);
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1{
+      text-shadow: 2px 2px 4px #dd1111;
+    }
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .services, .pricing, .contact {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .services div {
+      background-color: #fff;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .pricing table {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(137, 132, 132, 0.1);
+    }
+    .pricing th, .pricing td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 0px solid #ddd;
+    }
+    .pricing th {
+      background-color: #6e6c6c;
+      color: #fff;
+    }
+    .pricing th:hover {
+      background-color: #555353;
+    }
+    td{
+      background:linear-gradient(lightskyblue,white,pink);
+    }
+    .contact form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(92, 91, 91, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact input, .contact textarea {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      align-items: center;
+    }
+    .contact button {
+      padding: 12px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .contact button:hover {
+      background-color: #555;
+    }
+    footer {
+      background:linear-gradient(to right, #656465, #2d2c2d);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+    .photo{
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: black;
+    }
+    @media (max-width: 600px) {
+  body {
+    width: 100%;
+    height: auto;
+  }
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>RJ Xerox Shop</h1>
+</header>
+
+<nav>
+  <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <div><a href="photo.html" class="photo"><p><i class="fas fa-copy"></i> Photocopying</p></a></div>
+  <div><p><i class="fas fa-print"></i> Printing (Color & Black & White)</p></div>
+  <div><p><i class="fas fa-file"></i> Scanning & Digital Services</p></div>
+  <div><p><i class="fas fa-file-alt"></i> Lamination & Binding</p></div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Pricing</h2>
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>Black & White Copy</td>
+      <td>₹2 per page</td>
+    </tr>
+    <tr>
+      <td>Color Copy</td>
+      <td>₹5 per page</td>
+    </tr>
+    <tr>
+      <td>Scanning</td>
+      <td>₹10 per page</td>
+    </tr>
+    <tr>
+      <td>Lamination</td>
+      <td>₹20 per page</td>
+    </tr>
+  </table>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>Address: LF Main Road, Cumbum, Theni | Phone: +91 98765 43210</p>
+</footer>
+
+</body>
+</html>

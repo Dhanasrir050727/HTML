@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Creater</title>
+</head>
+<body>
+    <h2>Create an Image</h2>
+    <input type="text" id="txt" placeholder="Enter animal name"><br><br>
+    <input type="button" value="Create Image" onclick="createImage()"><br><br>
+    <img width="200px" id="image">
+    <p id="msg"></p>
+    <script>
+        function createImage(){
+            let txt=document.getElementById("txt").value;
+            let image=document.getElementById("image");
+            let msg=document.getElementById("msg");
+            if(txt=="bear"){
+                image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqiW0KMsGsZHuve8dnIUxU9lM_OUYxnwUlmg&s";
+                msg.innerHTML="Here is a bear";
+            }
+            else if(txt=="cat"){
+                image.src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg";
+                msg.innerHTML="Here is a cat";
+            }
+            else if(txt=="lion"){
+                image.src="https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg";
+                msg.innerHTML="Here is a lion";
+            }
+            else if(txt=="dog"){
+                image.src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg";
+                msg.innerHTML="Here is a dog";
+            }
+            else{
+                image.src="";
+                msg.innerHTML="Image not found";
+            }
+        }
+    </script>
+</body>
+</html>

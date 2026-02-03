@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hello</h3>
+    <p>Your FirstName is: <span id="display"></span></p>
+    <p>Your LastName is: <span id="display1"></span></p>
+    <p>Your Gener is: <span id="display2"></span></p>
+    <p>Your Age is: <span id="display3"></span></p>
+    <script>
+        const f1=localStorage.getItem("fname");
+        const l1=localStorage.getItem("lname");
+        const g1=localStorage.getItem("gender");
+        const a1=localStorage.getItem("age");
+        document.getElementById("display").textContent=f1;
+        document.getElementById("display1").textContent=l1;
+        document.getElementById("display2").textContent=g1;
+        document.getElementById("display3").textContent=a1;
+    </script>
+</body>
+</html>

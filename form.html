@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <style>
+        u h2{
+            text-align: center;
+            animation-name: col;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            width: 200px;
+        }
+        @keyframes col{
+            0%{color: blue;}
+            25%{color: red;}
+            50%{color: purple;}
+            75%{color: black;}
+            100%{color: blue;}
+        }
+        form{
+            margin-left: 20px;
+            background-color: lightgray;
+            width: 300px;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px #000000;
+        }
+        input[type=radio], input[type=checkbox]{
+            margin: 5px 10px 15px 10px;
+        }
+        input[type=text], input[type=date], input[type=tel], input[type=email], select, textarea{
+            width: 250px;
+            padding: 5px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            background-color: blue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form:hover{
+            background-image: linear-gradient(rgb(107, 177, 246),rgb(195, 129, 253));
+            animation-name: back;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+    </style>
+    <body>
+        <form  id="forms" >
+            <legend><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Form Tag</h2></legend>
+              <div class="imgcontainer">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0PDQ4NDg0PDQ4NDQ0NDg0ODQ8NDQ0NFREYFhURExMYHSggGBolGxMTITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0NDg0NDisZHxkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAaAAEBAQEBAQEAAAAAAAAAAAAAAwQCBQEH/8QALBABAAECBQIEBgMBAAAAAAAAAAECAwQRMUFRIXEiYYGhEhQyQpHRUrHBE//EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A/cQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfKqogH0Sm5O3RxMgtNUcn/SEQFf8ApD78ccogNAzw7i5PcFRzTVEugAAAAAAAAAAAAAAAAASrrz7f2D7Vc4/KYAAAAAAAAAO6K+XADQI0V5dlgAAAAAAAAAAAAAfKpygHFyrb8pgAAAAAJ3L1NOvWeIRnFTtEevUGoZYxU8R7wrbv0z00niQVAAAAd26tnADQOaKs4dAAAAAAAAAAAJXZ65cKs8yAAAAAhiLuXSNd54WqnKJniM3n1TnOfIPgCoAA04a99s+k/wCNLzXoW6s6YnlFdAAAA6tz1WZ14kH0AAAAAAAAAHNekorXNEQAAAATv/RPZhbr/wBFXZhUABAABswv0essbZhfp9ZBYBFAAFbWiSlrSQUAAAAAAAAABxc0SWr0lEAAAAHyqM4mOYyefVGU5cPRQxFrPxRrvHIMgCoAAPQtU5UxCGHs/dPpH+tKKAAAAKWt01bWgOwAAAAAAAAAJZ2hK5HXuDgAAAAcXLtNOs9eI1RqxXFP5kFblmmrynmEZws7TH9PnzVXEe581VxHuBGFnmFrdimPOfNH5qriPc+aq4j3BrGWMVO9Mek5LW71M75TxIKAAAAL0x0SojOVgAAAAAAAAAAHNcZw6AZx3cp3cAM+IvZeGNd54VvV/DTM76R3YAAFQAAAAABosX/tq9JanmtuHrzp846IqoOrdOYO7dOUOwAAAAAAAAAAAAARrpy7LAPOxk6R3lmbcZYmfFHWIjTdiVAAAAAAAABfCT4suYQasHYqz+Keke8g0005rRBEPqKAAAAAAAAAAAAAAAAIXsNTV10nmFwHmXcLXTt8Ucx+kHtOa7dM6xE94B449KrB252mO0/txOBp/lPsowDfGBp/lPs6pwVHnPef0DzlreGrq2yjmej0aLVNOlMR6dXaDPZwlNPWfFPnp+GgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/Z" alt="Avatar" class="avatar">
+</div>
+            First name: <input type="text" name="fname" id="fname" pattern="[A-Z]{8}"><br>
+            Last name:<input type="text" name="lname" id="lname"><br>
+            Genter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="genter" id="gender">Male
+                          <input type="radio" name="genter">Female<br><br>
+            Age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="age" id="age" pattern="[0-9]{2}"><br>
+            DOB: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="bday" id="day"><br>
+            Phone No: &nbsp;&nbsp;<input type="tel" name="phone" pattern="[0-9]{10}" id="phone" placeholder="+91 1234567890"><br>
+            Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="email" id="email" placeholder="abc@gmail.com"><br>
+            Address: <br><textarea name="address" rows="4" cols="30" id="add"></textarea><br>
+            District: <select name="district">
+                        <option>Chennai</option>
+                        <option>Coimbatore</option>
+                        <option>Madurai</option>
+                        <option>Salem</option>
+                        <option>Theni</option>
+                        <option>Tirunelveli</option>
+                        <option>Vellore</option>
+                    </select><br>
+            Known Languages: <br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lang">Tamil<br>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lang">English<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lang">Hindi<br>
+            <br><center><input type="submit" value="Submit"></center>
+        <script src="form.js"></script>
+        </form>
+    </body>
+</html>

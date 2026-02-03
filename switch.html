@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    First Number:<input type="number" id="num1"><br><br>
+    Second Number:<input type="number" id="num2"><br><br>
+    Third Number:<input type="number" id="num3"><br><br>
+    <button onclick="switch1()" type="button">Check</button>
+    <p id="p"></p>
+    <script>
+        function switch1(){
+        let num1=Number(document.getElementById("num1").value);
+        let num2=Number(document.getElementById("num2").value);
+        let num3=Number(document.getElementById("num3").value);
+        let p=document.getElementById("p");
+
+        switch(true){
+            case (num1>num2 && num1>num3):
+                p.innerHTML="First number is biggest";
+                break;
+            case (num2>num3 && num2>num1):
+                p.innerHTML="Second number is biggest";
+                break;
+            case (num3>num1 && num3>num2):
+                p.innerHTML="Third number is biggest";
+                break;
+            case (num1==num2 && num1>num3):
+                p.innerHTML="First and Second number are equal and biggest";
+                break;
+            case (num1==num3 && num1>num2):
+                p.innerHTML="First and Third number are equal and biggest";
+                break;
+            case (num2==num3 && num2>num1):
+                p.innerHTML="Second and Third number are equal and biggest";
+                break;
+            default:
+                p.innerHTML="All are equal";
+            }
+        }
+    </script>
+</body>
+</html>

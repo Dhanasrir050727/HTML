@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-Chain</title>
+    <style>
+      .food{
+        display: flex;
+        justify-content: center;
+      }
+      .chain{
+        background-color: ghostwhite;
+        font-size: 25px;
+        margin: 0px 10px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .arrow{
+        font-size: 25px;
+        padding: 10px;
+      }
+    </style>
+</head>
+<body>
+      <h1>Food Chain</h1>
+      <div class="food">
+        <div class="chain" id="grass" style="--angle:0deg">Grass 🌿</div>
+        <div class="arrow">→</div>
+        <div class="chain" id="goat" style="--angle:120deg">Goat 🐐</div>
+        <div class="arrow">→</div>
+        <div class="chain" id="man" style="--angle:240deg">Human🧍</div>
+      </div><br><br>
+      <div class="food">
+        <div class="chain" id="flower">Flower 🌸</div>
+        <div class="arrow">→</div>
+        <div class="chain" id="goat">Flies 🦋</div>
+        <div class="arrow">→</div>
+        <div class="chain" id="frog">Frog 🐸</div>
+      </div>
+</body>
+</html>

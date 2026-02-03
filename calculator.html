@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input{
+            width:70px;
+            height:60px;
+            font-size:30px;
+            text-align:center;
+            background-color: ghostwhite;
+            margin:5px;
+            cursor: pointer;
+        }
+        input:hover{
+            background-color: lightgray;
+        }
+        #t1{
+            width: 259px;
+            border-radius: 10px;
+        }
+        .border{
+            border: 2px solid rgb(15, 15, 15);
+            width: 290px;
+            border-radius: 10px;
+            background-color: ghostwhite;
+        }
+        input[type="button"]{
+            width: 80px;
+        }
+        body.dark{
+            background-color: black;
+            color: rgb(249, 248, 248);
+        }
+        #round{
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator <button id="round" onclick="darkMode()">🌙</button></h1><center>
+    <div class="border">
+        <input type="text" id="t1" value="">
+        <br>
+        <input type="button" value="1" onclick="addTo('1')">
+        <input type="button" value="2" onclick="addTo('2')">
+        <input type="button" value="3" onclick="addTo('3')">
+        <br>
+        <input type="button" value="4" onclick="addTo('4')">
+        <input type="button" value="5" onclick="addTo('5')">
+        <input type="button" value="6" onclick="addTo('6')">
+        <br>
+        <input type="button" value="7" onclick="addTo('7')">
+        <input type="button" value="8" onclick="addTo('8')">
+        <input type="button" value="9" onclick="addTo('9')">
+        <br>
+        <input type="button" value="." onclick="addTo('.')">
+        <input type="button" value="0" onclick="addTo('0')">
+        <input type="button" value="/" onclick="addTo('/')">
+        <br>
+        <input type="button" value="*" onclick="addTo('*')">
+        <input type="button" value="-" onclick="addTo('-')">
+        <input type="button" value="+" onclick="addTo('+')">
+        <br>
+        <input type="button" value="&LeftArrow;" onclick="erase()">
+        <input type="button" value="C" onclick="clear1()">
+        <input type="button" value="=" onclick="calculate()">
+        <br>
+    </div>
+    </center>
+        <script>
+            function addTo(value){
+                document.getElementById("t1").value+=value;
+            }
+            function calculate(){
+                var r=eval(document.getElementById("t1").value);
+                try{
+                    document.getElementById('t1').value=r;
+
+                }
+                catch(err){
+                    document.getElementById('t1').value="Error";
+                }
+            }
+            function clear1(){
+                document.getElementById("t1").value="";
+                document.getElementById("history").innerHTML="";
+            }
+            function erase(){
+                var removeLast=document.getElementById("t1").value;
+                document.getElementById("t1").value=removeLast.slice(0,-1);
+            }
+            function darkMode(){
+                document.body.classList.toggle("dark");
+            }
+        </script>
+</body>
+</html>

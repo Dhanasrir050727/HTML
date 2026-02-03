@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+body{
+  background: linear-gradient(to right,lightskyblue,pink);
+  display: block;
+}
+fieldset{
+  float: center;
+  width: 70%;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  margin-left: 70px;
+  text-align: center;
+}
+input{
+  font-family: Times New Roman;
+}
+.underline{
+ border: none;
+ outline: none;
+ border-bottom: 1px solid black;
+}
+#btn{
+  background-color:white;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid rgb(103, 98, 98);
+}
+#btn:hover{
+  background-color:rgb(202, 201, 201);
+}
+.check{
+  float: left;
+  margin: 30px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.check input{
+  transform: scale(1.2);
+}
+h3{
+  font-family: 'Sofia', cursive;
+  font-size: 30px;
+
+}
+@media screen and (min-width: 800px) {
+  
+  fieldset{
+    width: 30%;
+    margin-left: 300px;
+  } 
+}
+</style>
+  </head>
+  <body><br><br><br><br>
+      <form id="loginform">
+        <fieldset><br><br>
+        <h3>Login Form</h3><br><br>
+        <div style="display:flex;align-items: center;margin-left: 30px;">
+          Email &nbsp;&nbsp;&nbsp;&nbsp; <input type="Email" id="name" class="underline" required></div><br><br><br><br>
+        <div style="display:flex;align-items: center;margin-left: 30px;">
+          Password &nbsp;<input type="password" id="pass" class="underline" required></div><br>
+          <span class="check"><input style="margin-right: 2px;" type="checkbox">Remember me </span><br><br><br>
+          <br><br><a href="login.html"><input type="submit" value="Log In" id="btn"></a><br><br>
+          <label>Don't have a account <a href="form.html">Register</a></label>
+        </fieldset>
+      </form>
+      <script src="login.js"></script>
+  </body>
+</html>

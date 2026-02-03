@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body{
+            background-color:rgb(202, 244, 202);
+        }
+        h3{
+
+            text-align: center;
+            color: rgb(48, 48, 200);
+            font-size: 25px;
+            text-shadow: 2px 1px gold;
+        }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(92, 91, 91, 0.1);
+      width: 300px;
+      margin: 20px auto;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {       
+        width: 100%;
+      padding: 12px 20px;
+      background-color: green;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <form onsubmit="return checkThis()">
+        <h2>Login</h2>
+        <input type="text" id="name" placeholder="Full Name" required><br><br>
+        <input type="email" placeholder="Email" id="em" required><br><br>
+        <input type="password" placeholder="Password" id="pass" title="Password must be at least 8 characters and Special characters" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[@!#$%^&*]).{8,}$" required><br><br>
+        <input type="password" placeholder="Confirm Password" id="pass1" title="Password must be at least 8 characters and Special characters" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[@!#$%^&*]).{8,}$" required><br><br>
+        <button type="submit">Login</button><br><br>
+    </form>
+    <script>
+        function checkThis(){
+            let name=document.getElementById("name").value
+            let email=document.getElementById("em").value;
+            let pass=document.getElementById("pass").value;
+            let pass1=document.getElementById("pass1").value;
+
+            let inputs={
+                email:email,
+                pass:pass
+            }
+    
+            if(name==""||email=="" || pass==""|| pass=="^(?=.*[0-9])(?=.*[a-z])(?=.*[@!#$%^&*]).{8,}$" ||pass!=pass1){
+                    alert("Please Check your inputfields")
+            }
+            localStorage.setItem("userData", JSON.stringify(inputs));
+            alert("Signup successful!");
+            window.location.href = "welcome.html";
+            return false;
+        }
+    </script>
+</body>
+</html>
